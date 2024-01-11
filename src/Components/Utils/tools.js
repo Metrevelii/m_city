@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
+
+import firebase from "../../firebase";
 
 import mcitylogo from "../../Resources/images/logos/manchester_city_logo.png";
 
@@ -27,14 +29,25 @@ export const CityLogo = (props) => {
   }
 };
 
-
 export const showToastError = (msg) => {
   toast.error(msg, {
     position: toast.POSITION.TOP_LEFT,
-  })
-}
+  });
+};
 export const showToastSuccess = (msg) => {
   toast.success(msg, {
     position: toast.POSITION.TOP_LEFT,
-  })
-}
+  });
+};
+
+export const logoutHandler = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      showToastSuccess("Good bye");
+    })
+    .catch((error) => {
+      showToastError(error.message);
+    });
+};

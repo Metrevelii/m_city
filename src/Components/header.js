@@ -7,22 +7,9 @@ import Button from "@mui/material/Button";
 
 import { Link } from "react-router-dom";
 import { CityLogo } from "../Components/Utils/tools";
-import firebase from "../firebase";
-import { showToastSuccess, showToastError } from "../Components/Utils/tools";
+import { logoutHandler } from "../Components/Utils/tools";
 
 const Header = ({ user }) => {
-  const logoutHandler = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        showToastSuccess("Good bye");
-      })
-      .catch((error) => {
-        showToastError(error.message);
-      });
-  };
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
