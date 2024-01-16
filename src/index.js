@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./Resources/css/app.css";
-import firebase from "./firebase";
+import { firebase } from "./firebase";
 import Routes from "./routes";
 
 const App = (props) => {
