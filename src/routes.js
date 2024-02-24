@@ -9,16 +9,30 @@ import Home from "./Components/Home";
 import SignIn from "./Components/Signin";
 
 import Dashboard from "./Components/Admin/dashboard";
-import AdminPlayers from './Components/Admin/players'
+import AdminPlayers from "./Components/Admin/players";
 import AuthGuard from "./Hoc/Auth";
-
+import AddEditPlayer from "./Components/Admin/players/addEditPlayers";
 
 const Routes = ({ user }) => {
   return (
     <BrowserRouter>
       <Header user={user} />
       <Switch>
-        <Route path="/admin_players" exact component={AuthGuard(AdminPlayers)} />
+        <Route
+          path="/admin_players/edit_player/:playerid"
+          exact
+          component={AuthGuard(AddEditPlayer)}
+        />
+        <Route
+          path="/admin_players/add_player"
+          exact
+          component={AuthGuard(AddEditPlayer)}
+        />
+        <Route
+          path="/admin_players"
+          exact
+          component={AuthGuard(AdminPlayers)}
+        />
         <Route path="/dashboard" exact component={AuthGuard(Dashboard)} />
         <Route
           path="/sign_in"
