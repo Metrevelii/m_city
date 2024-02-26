@@ -1,6 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import "firebase/compat/storage";
 
 // import { cityDb } from "./temp/m-city-export";
 
@@ -39,4 +40,11 @@ const teamsCollection = DB.collection("teams");
 //   teamsCollection.add(item);
 // });
 
-export { firebase, matchesCollection, playersCollection, positionsCollection, promotionsCollection, teamsCollection };
+export {
+  firebase,
+  matchesCollection,
+  playersCollection,
+  positionsCollection,
+  promotionsCollection,
+  teamsCollection,
+};
