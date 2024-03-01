@@ -24,7 +24,7 @@ const AdminMatches = () => {
   useEffect(() => {
     if (!matches) {
         setLoading(true);
-        matchesCollection.limit(2).get().then(snapshot => {
+        matchesCollection.limit(5).get().then(snapshot => {
             const lastVisible = snapshot.docs[snapshot.docs.length - 1];
             const matches = snapshot.docs.map(doc => ({
                 id: doc.id,
@@ -113,7 +113,7 @@ const AdminMatches = () => {
                                     {match.resultLocal} <strong>-</strong> {match.resultAway}
                                 </TableCell>
                                 <TableCell>
-                                    {match.final === 'Yes' ? 
+                                    {match.final === 'yes' ? 
                                     <span className="matches_tag_green">
                                         Final
                                     </span>
