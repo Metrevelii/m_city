@@ -7,6 +7,7 @@ import Header from "./Components/header";
 import Footer from "./Components/footer";
 import Home from "./Components/Home";
 import SignIn from "./Components/Signin";
+import TheMatches from "./Components/TheMatches"
 
 import Dashboard from "./Components/Admin/dashboard";
 import AdminPlayers from "./Components/Admin/players";
@@ -59,6 +60,7 @@ const Routes = ({ user }) => {
           component={(props) => <SignIn {...props} user={user} />}
         />
         <Route path="/" exact component={Home} />
+        <Route path="/the_matches" exact component={TheMatches} />
       </Switch>
       <ToastContainer />
       <Footer />

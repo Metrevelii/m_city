@@ -144,7 +144,7 @@ const AddEditMatch = (props) => {
             }).catch(error=>{
                 showToastError('Sorry, something went wrong',error);
             }).finally(()=>{
-                setLoading(true);
+                setLoading(false);
             });
         } else {
             matchesCollection.doc(props.match.params.matchid)
