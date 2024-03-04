@@ -8,6 +8,7 @@ import Footer from "./Components/footer";
 import Home from "./Components/Home";
 import SignIn from "./Components/Signin";
 import TheMatches from "./Components/TheMatches"
+import NotFound from './Components/not_found';
 
 import Dashboard from "./Components/Admin/dashboard";
 import AdminPlayers from "./Components/Admin/players";
@@ -24,43 +25,44 @@ const Routes = ({ user }) => {
       <Switch>
         <Route
           path="/admin_players/edit_player/:playerid"
-          exact
+          
           component={AuthGuard(AddEditPlayer)}
         />
         <Route
           path="/admin_players/add_player"
-          exact
+          
           component={AuthGuard(AddEditPlayer)}
         />
         <Route
           path="/admin_players"
-          exact
+          
           component={AuthGuard(AdminPlayers)}
         />
         <Route
           path="/admin_matches/edit_match/:matchid"
-          exact
+          
           component={AuthGuard(AddEditMatch)}
         />
         <Route
           path="/admin_matches/add_match"
-          exact
+          
           component={AuthGuard(AddEditMatch)}
         />
         <Route
           path="/admin_matches"
-          exact
+          
           component={AuthGuard(AdminMatches)}
         />
         <Route path="/dashboard" component={AuthGuard(Dashboard)} />
         <Route path="/the_team" component={AuthGuard(TheTeam)} />
         <Route
           path="/sign_in"
-          exact
+          
           component={(props) => <SignIn {...props} user={user} />}
         />
+        <Route path="/the_matches"  component={TheMatches} />
         <Route path="/" exact component={Home} />
-        <Route path="/the_matches" exact component={TheMatches} />
+        <Route path="" exact component={NotFound} />
       </Switch>
       <ToastContainer />
       <Footer />

@@ -150,7 +150,8 @@ const AddEditMatch = (props) => {
             matchesCollection.doc(props.match.params.matchid)
             .update(dataToSubmit)
             .then(() => {
-                showToastSuccess('Match updated')
+                showToastSuccess('Match updated');
+                setLoading(false);
             })
             .catch((error) => {
                 showToastError(error)
