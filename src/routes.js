@@ -54,7 +54,7 @@ const Routes = ({ user }) => {
           component={AuthGuard(AdminMatches)}
         />
         <Route path="/dashboard" component={AuthGuard(Dashboard)} />
-        <Route path="/the_team" component={AuthGuard(TheTeam)} />
+        <Route path="/the_team" component={TheTeam} />
         <Route
           path="/sign_in"
           
