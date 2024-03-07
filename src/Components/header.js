@@ -34,11 +34,11 @@ const Header = ({ user }) => {
           <Link to="/the_matches">
             <Button color="inherit">Matches</Button>
           </Link>
-          {!user ? <Link to="/Sign_in">
+          {/* {!user ? <Link to="/Sign_in">
             <Button color="inherit">Log in</Button>
           </Link> 
           
-          : null}
+          : null} */}
 
           {user ? (
             <>
